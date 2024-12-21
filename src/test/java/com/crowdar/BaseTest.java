@@ -1,13 +1,13 @@
 package com.crowdar;
 
 import com.crowdar.Utils.ElementFinder;
+import com.crowdar.page.LoginPage;
 import io.github.cdimascio.dotenv.Dotenv;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.FluentWait;
@@ -28,17 +28,19 @@ public abstract class BaseTest {
     protected FluentWait<WebDriver> fluentWait;
     protected ElementFinder elementFinder;
     protected Dotenv dotenv;
+    protected LoginPage loginPage;
 
     public void setUp() {
         dotenv = Dotenv.configure()
                 .ignoreIfMissing() // que no falle si el archivo .env no existe
                 .load();
 
+
         // Configuraciones de Chrome
         Map<String, Object> prefs = new HashMap<>();
         prefs.put("safebrowsing.enabled", true); // Evitar advertencias de seguridad
-        ChromeOptions options = new ChromeOptions();
-        options.setExperimentalOption("prefs", prefs);
+        //ChromeOptions options = new ChromeOptions();
+        //options.setExperimentalOption("prefs", prefs);
 
         try {
             boolean chromeVisible = Boolean.parseBoolean(dotenv.get("CHROME_VISIBLE"));
@@ -51,7 +53,7 @@ public abstract class BaseTest {
                 capabilities.setBrowserName("chrome");
                 capabilities.setVersion("127.0");
                 capabilities.setPlatform(Platform.LINUX);
-                capabilities.merge(options); // Mezclar las opciones con las capacidades
+                //capabilities.merge(options); // Mezclar las opciones con las capacidades
                 // Crear la instancia de WebDriver usando RemoteWebDriver
                 driver = new RemoteWebDriver(hubUrl, capabilities);
             } else {
@@ -69,7 +71,7 @@ public abstract class BaseTest {
                 }
                 System.setProperty("webdriver.chrome.driver", driverPath);
 
-                driver = new ChromeDriver(options);
+                driver = new ChromeDriver();
             }
             logger.info("Webdriver configurado exitosamente");
 
@@ -83,7 +85,11 @@ public abstract class BaseTest {
                 .withTimeout(Duration.ofSeconds(20))  // Tiempo máximo de espera
                 .pollingEvery(Duration.ofMillis(500))  // Revisión cada 500 ms
                 .ignoring(NoSuchElementException.class);  // Ignorar la excepción si el elemento no está presente de inmediato
+
+
         elementFinder = new ElementFinder(fluentWait);
+        loginPage = new LoginPage(elementFinder);
+
     }
 
     public void tearDown() throws InterruptedException {
@@ -91,6 +97,32 @@ public abstract class BaseTest {
             Thread.sleep(5000);
             driver.quit();
         }
+    }
+    public void iniciodeSesion(String user, String password) {
+
+            logger.info("Abriendo pagina...");
+
+            // Leer la URL base desde el archivo .env
+            String baseUrl = dotenv.get("BASE_URL");
+            if (baseUrl == null || baseUrl.isEmpty()) {
+                logger.error("La variable BASE_URL no está definida en el archivo .env");
+                return;
+            }
+
+            driver.get(baseUrl);
+            driver.manage().window().maximize();
+
+            logger.info("Iniciando sesión...");
+            loginPage.login(user, password);
+
+
+            // Espera hasta que cargue el dashboard
+            logger.info("Esperando la carga del dashboard");
+            loginPage.waitHomePage();
+
+            logger.info("Inicio de sesion finalizado");
+
+
     }
 
 }

@@ -16,21 +16,13 @@ public class ElementFinder {
         this.fluentWait = fluentWait;
     }
 
-    public WebElement findElement (By selector) {
-        try {
-            Thread.sleep(4000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+    public WebElement findElement(By selector) {
+        waitMillis();
         return fluentWait.until(ExpectedConditions.visibilityOfElementLocated(selector));
     }
 
-    public WebElement findClickableElement (By selector) {
-        try {
-            Thread.sleep(4000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+    public WebElement findClickableElement(By selector) {
+        waitMillis();
         return fluentWait.until(ExpectedConditions.elementToBeClickable(selector));
     }
 
@@ -40,12 +32,16 @@ public class ElementFinder {
 
     // Método para encontrar múltiples elementos
     public List<WebElement> findElements(By selector) {
+        waitMillis();
+        return fluentWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(selector));
+    }
+
+    public void waitMillis() {
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        return fluentWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(selector));
     }
 }
 
