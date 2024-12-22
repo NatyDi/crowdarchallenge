@@ -82,13 +82,13 @@ public abstract class BaseTest {
         js = (JavascriptExecutor) driver;
 
         fluentWait = new FluentWait<>(driver)
-                .withTimeout(Duration.ofSeconds(20))  // Tiempo máximo de espera
-                .pollingEvery(Duration.ofMillis(500))  // Revisión cada 500 ms
+                .withTimeout(Duration.ofMillis(100))  // Tiempo máximo de espera
+                .pollingEvery(Duration.ofMillis(20))  // Revisión cada 500 ms
                 .ignoring(NoSuchElementException.class);  // Ignorar la excepción si el elemento no está presente de inmediato
 
 
         elementFinder = new ElementFinder(fluentWait);
-        loginPage = new LoginPage(elementFinder);
+        loginPage = new LoginPage(elementFinder, js);
 
     }
 
@@ -99,6 +99,10 @@ public abstract class BaseTest {
         }
     }
     public void iniciodeSesion(String user, String password) {
+        iniciodeSesion(user, password, false);
+    }
+
+    public void iniciodeSesion(String user, String password, boolean async) {
 
             logger.info("Abriendo pagina...");
 
@@ -113,7 +117,7 @@ public abstract class BaseTest {
             driver.manage().window().maximize();
 
             logger.info("Iniciando sesión...");
-            loginPage.login(user, password);
+            loginPage.login(user, password, async);
 
 
             // Espera hasta que cargue el dashboard

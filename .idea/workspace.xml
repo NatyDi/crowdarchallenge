@@ -5,15 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45807c5b-d6ff-4577-a9eb-f53fb41efdaf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/env.example" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/crowdar/page/LoginPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/crowdar/LoginTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/crowdar/Utils/ElementFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/crowdar/Utils/ElementFinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/crowdar/page/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/crowdar/page/LoginPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/crowdar/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/crowdar/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/crowdar/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/crowdar/LoginTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,10 +43,13 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "TestNG.LoginTest (1).executor": "Run",
+    "TestNG.LoginTest.error_user.executor": "Run",
     "TestNG.LoginTest.executor": "Run",
     "TestNG.LoginTest.iniciodeSesion.executor": "Run",
     "TestNG.LoginTest.iniciodeSesionlocked_out_user.executor": "Run",
     "TestNG.LoginTest.iniciodeSesionstandar_user.executor": "Run",
+    "TestNG.LoginTest.performance_glitch_user.executor": "Debug",
+    "TestNG.LoginTest.problem_user.executor": "Run",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/natyd/Curso Selenium+cucumber/Crowdar"
@@ -61,24 +60,7 @@
       <recent name="C:\Users\natyd\Curso Selenium+cucumber\Crowdar" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.LoginTest.iniciodeSesionlocked_out_user">
-    <configuration name="LoginTest (1)" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Crowdar" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.crowdar.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.crowdar" />
-      <option name="MAIN_CLASS_NAME" value="com.crowdar.LoginTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.LoginTest">
     <configuration name="LoginTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Crowdar" />
       <extension name="coverage">
@@ -90,24 +72,6 @@
       <option name="PACKAGE_NAME" value="com.crowdar" />
       <option name="MAIN_CLASS_NAME" value="com.crowdar.LoginTest" />
       <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LoginTest.iniciodeSesion" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Crowdar" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.crowdar.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.crowdar" />
-      <option name="MAIN_CLASS_NAME" value="com.crowdar.LoginTest" />
-      <option name="METHOD_NAME" value="iniciodeSesion" />
-      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -150,13 +114,49 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LoginTest.performance_glitch_user" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Crowdar" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.crowdar.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.crowdar" />
+      <option name="MAIN_CLASS_NAME" value="com.crowdar.LoginTest" />
+      <option name="METHOD_NAME" value="performance_glitch_user" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginTest.problem_user" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Crowdar" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.crowdar.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.crowdar" />
+      <option name="MAIN_CLASS_NAME" value="com.crowdar.LoginTest" />
+      <option name="METHOD_NAME" value="problem_user" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.LoginTest.iniciodeSesionlocked_out_user" />
         <item itemvalue="TestNG.LoginTest" />
+        <item itemvalue="TestNG.LoginTest.performance_glitch_user" />
         <item itemvalue="TestNG.LoginTest.iniciodeSesionstandar_user" />
-        <item itemvalue="TestNG.LoginTest.iniciodeSesion" />
-        <item itemvalue="TestNG.LoginTest (1)" />
+        <item itemvalue="TestNG.LoginTest.problem_user" />
+        <item itemvalue="TestNG.LoginTest.iniciodeSesionlocked_out_user" />
       </list>
     </recent_temporary>
   </component>
@@ -170,5 +170,31 @@
       <updated>1734805613513</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/crowdar/LoginTest.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/crowdar/LoginTest.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/crowdar/page/LoginPage.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/crowdar/LoginTest.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -2,15 +2,18 @@ package com.crowdar;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+import java.time.Duration;
+
 public class LoginTest  extends BaseTest {
 
     private static final Logger logger = LoggerFactory.getLogger(LoginTest.class);
-    SoftAssert softAssert = new SoftAssert();
+
 
     @BeforeClass
     public void setUp() {
@@ -27,15 +30,55 @@ public class LoginTest  extends BaseTest {
         super.iniciodeSesion("standard_user", "secret_sauce");
 
         logger.info("Verificando que la página de Home ha cargado...");
-        softAssert.assertTrue(super.loginPage.isHomePageLoaded(), "La página de Home no se cargó correctamente");
+        //super.loginPage.waitMillis();
+        Assert.assertTrue(super.loginPage.isHomePageLoaded(), "La página de Home no se cargó correctamente");
+        Assert.assertTrue(super.loginPage.isProductsTextVisible(), "La palabra 'Products' no se encontró en la página");
         logger.info("Prueba finalizada con éxito");
     }
     @Test
     public void iniciodeSesionlocked_out_user() {
         super.iniciodeSesion("locked_out_user", "secret_sauce");
         // hacer assert que el mensaje de error fue mostrado para el usuario bloqueado
-        softAssert.assertTrue(super.loginPage.isMessageErrorBlockedUserShown(), "El mensaje de Error no fue mostrado");
+        Assert.assertTrue(super.loginPage.isMessageErrorBlockedUserShown(), "El mensaje de Error no fue mostrado");
         logger.info("Prueba finalizada con éxito");
     }
+    @Test
+    public void problem_user() {
+        super.iniciodeSesion("problem_user", "secret_sauce");
+
+        logger.info("Verificando que la página de Home ha cargado...");
+        Assert.assertTrue(super.loginPage.isHomePageLoaded(), "La página de Home no se cargó correctamente");
+        Assert.assertTrue(super.loginPage.isProductsTextVisible(), "La palabra 'Products' no se encontró en la página");
+        logger.info("Prueba finalizada con éxito");
+    }
+
+    @Test
+    public void performance_glitch_user() {
+        super.iniciodeSesion("performance_glitch_user", "secret_sauce", true);
+        logger.info("Verificando que la página de Home ha cargado...");
+        Assert.assertTrue(super.loginPage.isProductsTextVisible(), "La palabra 'Products' no se encontró en la página");
+        logger.info("Prueba finalizada con éxito");
+    }
+
+    @Test
+    public void error_user() {
+        super.iniciodeSesion("error_user", "secret_sauce");
+
+        logger.info("Verificando que la página de Home ha cargado...");
+        Assert.assertTrue(super.loginPage.isHomePageLoaded(), "La página de Home no se cargó correctamente");
+        Assert.assertTrue(super.loginPage.isProductsTextVisible(), "La palabra 'Products' no se encontró en la página");
+        logger.info("Prueba finalizada con éxito");
+    }
+    @Test
+    public void visual_user() {
+        super.iniciodeSesion("visual_user", "secret_sauce");
+
+        logger.info("Verificando que la página de Home ha cargado...");
+        Assert.assertTrue(super.loginPage.isHomePageLoaded(), "La página de Home no se cargó correctamente");
+        Assert.assertTrue(super.loginPage.isProductsTextVisible(), "La palabra 'Products' no se encontró en la página");
+        logger.info("Prueba finalizada con éxito");
+    }
+
+
 }
 
