@@ -1,5 +1,6 @@
 package com.crowdar;
 
+import com.crowdar.Utils.CapturaEvidencia;
 import com.crowdar.Utils.ElementFinder;
 import com.crowdar.page.ShoppingCarPage;
 import org.slf4j.Logger;
@@ -19,6 +20,8 @@ public class ShopingCartTest extends BaseTest {
     public void setUp() {
         super.setUp();
         shoppingCarPage = new ShoppingCarPage(super.elementFinder);
+        //Iniciar sesión antes de realizar la prueba
+        super.iniciodeSesion("standard_user", "secret_sauce");
     }
 
     @AfterClass
@@ -26,31 +29,29 @@ public class ShopingCartTest extends BaseTest {
         super.tearDown();
     }
 
-    @Test (priority = 2)
+    @Test(priority = 2)
     public void addFirstArticulCar() {
         logger.info("Haciendo clic en el boton...");
         shoppingCarPage.addProductToCart();
     }
 
-    @Test (priority = 3)
+    @Test(priority = 3)
     public void addSecondArticulCar() {
         logger.info("Haciendo clic en el boton...");
         shoppingCarPage.addSecondProductToCart();
     }
 
 
-    @Test (priority = 4)
+    @Test(priority = 4)
     public void removeCar() {
         logger.info("Haciendo clic en el boton...");
         shoppingCarPage.removeCartArti();
 
     }
 
-    @Test (priority = 1)
+    @Test(priority = 1)
     public void clearShoppingCar() {
 
-        //Iniciar sesión antes de realizar la prueba
-        super.iniciodeSesion("standard_user", "secret_sauce");
 
         logger.info("Haciendo clic en el boton de menu..");
         shoppingCarPage.menuCart();
@@ -66,9 +67,28 @@ public class ShopingCartTest extends BaseTest {
         logger.info("Prueba finalizada con éxito");
 
 
-
     }
 
+    @Test(priority = 5)
+    public void clearShoppingCarConFallaIntencional() throws Exception {
+        try {
+            logger.info("Haciendo clic en el boton de menu..");
+            shoppingCarPage.menuCart();
+
+            elementFinder.waitMillis();
+
+            logger.info("Haciendo clic en el boton de reset..");
+            shoppingCarPage.resetCart();
+
+            // Verificar que la página no tenga articulos
+            logger.info("verificar que no haya articulos en el carrito");
+            Assert.assertTrue(shoppingCarPage.isProductsCartVisible(), "Los articulos no se encontraron en el carrito");
+            logger.info("Prueba finalizada con éxito");
+        } catch (Throwable e) {
+            CapturaEvidencia.capturaPantallaEnDocumento(super.driver, "Falla Intencional.docx", "Falla Intencional");
+            Assert.fail("Falla Intencional", e);
+        }
+    }
 
 }
 

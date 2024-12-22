@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45807c5b-d6ff-4577-a9eb-f53fb41efdaf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/crowdar/DepartmentsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/crowdar/Utils/CapturaEvidencia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/crowdar/ShopingCartTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/crowdar/ShopingCartTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +40,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "TestNG.DepartmentsTest.executor": "Run",
     "TestNG.LoginTest (1).executor": "Run",
     "TestNG.LoginTest.error_user.executor": "Run",
     "TestNG.LoginTest.executor": "Run",
@@ -50,6 +52,7 @@
     "TestNG.ShopingCartTest.addArticulCar.executor": "Run",
     "TestNG.ShopingCartTest.addFirstArticulCar.executor": "Run",
     "TestNG.ShopingCartTest.clearShoppingCar.executor": "Run",
+    "TestNG.ShopingCartTest.clearShoppingCarConFallaIntencional.executor": "Debug",
     "TestNG.ShopingCartTest.executor": "Run",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
@@ -61,7 +64,7 @@
       <recent name="C:\Users\natyd\Curso Selenium+cucumber\Crowdar" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.DepartmentsTest">
+  <component name="RunManager" selected="TestNG.ShopingCartTest.clearShoppingCarConFallaIntencional">
     <configuration name="DepartmentsTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Crowdar" />
       <extension name="coverage">
@@ -90,24 +93,6 @@
       <option name="PACKAGE_NAME" value="com.crowdar" />
       <option name="MAIN_CLASS_NAME" value="com.crowdar.ShopingCartTest" />
       <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ShopingCartTest.addArticulCar" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Crowdar" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.crowdar.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.crowdar" />
-      <option name="MAIN_CLASS_NAME" value="com.crowdar.ShopingCartTest" />
-      <option name="METHOD_NAME" value="addArticulCar" />
-      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -150,13 +135,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ShopingCartTest.clearShoppingCarConFallaIntencional" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Crowdar" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.crowdar.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.crowdar" />
+      <option name="MAIN_CLASS_NAME" value="com.crowdar.ShopingCartTest" />
+      <option name="METHOD_NAME" value="clearShoppingCarConFallaIntencional" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.ShopingCartTest.clearShoppingCarConFallaIntencional" />
+        <item itemvalue="TestNG.ShopingCartTest.addFirstArticulCar" />
         <item itemvalue="TestNG.DepartmentsTest" />
         <item itemvalue="TestNG.ShopingCartTest" />
         <item itemvalue="TestNG.ShopingCartTest.clearShoppingCar" />
-        <item itemvalue="TestNG.ShopingCartTest.addFirstArticulCar" />
-        <item itemvalue="TestNG.ShopingCartTest.addArticulCar" />
       </list>
     </recent_temporary>
   </component>
@@ -170,5 +173,26 @@
       <updated>1734805613513</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/crowdar/ShopingCartTest.java</url>
+          <line>83</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/crowdar/ShopingCartTest.java</url>
+          <line>87</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/crowdar/ShopingCartTest.java</url>
+          <line>84</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
