@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45807c5b-d6ff-4577-a9eb-f53fb41efdaf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/crowdar/edge/LoginTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/crowdar/edge/ShopingCartTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Falla Intencional.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Falla Intencional.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/crowdar/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/crowdar/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/crowdar/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/crowdar/chrome/LoginTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/crowdar/ShopingCartTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/crowdar/chrome/ShopingCartTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +73,7 @@
       <recent name="C:\Users\natyd\Curso Selenium+cucumber\Crowdar" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.LoginTest.performance_glitch_user">
+  <component name="RunManager" selected="TestNG.com.crowdar">
     <configuration name="LoginTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Crowdar" />
       <extension name="coverage">
@@ -163,11 +159,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.com.crowdar" />
         <item itemvalue="TestNG.LoginTest.performance_glitch_user" />
         <item itemvalue="TestNG.com.crowdar.edge" />
         <item itemvalue="TestNG.com.crowdar.chrome" />
         <item itemvalue="TestNG.LoginTest" />
-        <item itemvalue="TestNG.com.crowdar" />
       </list>
     </recent_temporary>
   </component>

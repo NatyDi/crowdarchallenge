@@ -39,13 +39,11 @@ public abstract class BaseTest {
                 .ignoreIfMissing() // que no falle si el archivo .env no existe
                 .load();
 
-        if(browser == "chrome") {
+        if (browser == "chrome") {
             setupChromeDriver();
-        } else{
+        } else {
             setupEdgeDriver();
         }
-
-
 
 
         js = (JavascriptExecutor) driver;
@@ -77,36 +75,22 @@ public abstract class BaseTest {
         prefs.put("safebrowsing.enabled", true); // Evitar advertencias de seguridad
 
         try {
-            boolean chromeVisible = Boolean.parseBoolean(dotenv.get("CHROME_VISIBLE"));
-            if (!chromeVisible) {
-                logger.info("Configurando Webdriver modo invisible");
-
-                // URL del Selenium Grid Hub
-                URL hubUrl = new URL("http://localhost:4444");
-                DesiredCapabilities capabilities = new DesiredCapabilities();
-                capabilities.setBrowserName("chrome");
-                capabilities.setVersion("127.0");
-                capabilities.setPlatform(Platform.LINUX);
-                //capabilities.merge(options); // Mezclar las opciones con las capacidades
-                // Crear la instancia de WebDriver usando RemoteWebDriver
-                driver = new RemoteWebDriver(hubUrl, capabilities);
+            logger.info("Configurando Webdriver modo visible");
+            String userHome = System.getProperty("user.home");
+            String chromeDriverPath = dotenv.get("CHROME_DRIVER_PATH");
+            String driverPath;
+            if (chromeDriverPath == null || chromeDriverPath.isEmpty()) {
+                logger.info("CHROME_DRIVER_PATH not defined. Using default path.");
+                driverPath = userHome + File.separator + "drivers" + File.separator + "chromedriver.exe";
             } else {
-                logger.info("Configurando Webdriver modo visible");
-                String userHome = System.getProperty("user.home");
-                String chromeDriverPath = dotenv.get("CHROME_DRIVER_PATH");
-                String driverPath;
-                if (chromeDriverPath == null || chromeDriverPath.isEmpty()) {
-                    logger.info("CHROME_DRIVER_PATH not defined. Using default path.");
-                    driverPath = userHome + File.separator + "drivers" + File.separator + "chromedriver.exe";
-                } else {
-                    // Use the path defined in .env
-                    driverPath = chromeDriverPath + File.separator + "chromedriver.exe";
-                    logger.info("Using CHROME_DRIVER_PATH from .env: " + driverPath);
-                }
-                System.setProperty("webdriver.chrome.driver", driverPath);
-
-                driver = new ChromeDriver();
+                // Use the path defined in .env
+                driverPath = chromeDriverPath + File.separator + "chromedriver.exe";
+                logger.info("Using CHROME_DRIVER_PATH from .env: " + driverPath);
             }
+            System.setProperty("webdriver.chrome.driver", driverPath);
+
+            driver = new ChromeDriver();
+
             logger.info("Webdriver configurado exitosamente");
 
         } catch (Exception ex) {
@@ -127,27 +111,27 @@ public abstract class BaseTest {
 
     public void iniciodeSesion(String user, String password, boolean async) {
 
-            logger.info("Abriendo pagina...");
+        logger.info("Abriendo pagina...");
 
-            // Leer la URL base desde el archivo .env
-            String baseUrl = dotenv.get("BASE_URL");
-            if (baseUrl == null || baseUrl.isEmpty()) {
-                logger.error("La variable BASE_URL no está definida en el archivo .env");
-                return;
-            }
+        // Leer la URL base desde el archivo .env
+        String baseUrl = dotenv.get("BASE_URL");
+        if (baseUrl == null || baseUrl.isEmpty()) {
+            logger.error("La variable BASE_URL no está definida en el archivo .env");
+            return;
+        }
 
-            driver.get(baseUrl);
-            driver.manage().window().maximize();
+        driver.get(baseUrl);
+        driver.manage().window().maximize();
 
-            logger.info("Iniciando sesión...");
-            loginPage.login(user, password, async);
+        logger.info("Iniciando sesión...");
+        loginPage.login(user, password, async);
 
 
-            // Espera hasta que cargue el dashboard
-            logger.info("Esperando la carga del dashboard");
-            loginPage.waitHomePage();
+        // Espera hasta que cargue el dashboard
+        logger.info("Esperando la carga del dashboard");
+        loginPage.waitHomePage();
 
-            logger.info("Inicio de sesion finalizado");
+        logger.info("Inicio de sesion finalizado");
 
 
     }
