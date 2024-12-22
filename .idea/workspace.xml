@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45807c5b-d6ff-4577-a9eb-f53fb41efdaf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/crowdar/page/ShoppingCarPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/crowdar/ShopingCartTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/crowdar/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/crowdar/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/crowdar/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/crowdar/LoginTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/crowdar/DepartmentsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,8 +61,8 @@
       <recent name="C:\Users\natyd\Curso Selenium+cucumber\Crowdar" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.ShopingCartTest">
-    <configuration name="LoginTest" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.DepartmentsTest">
+    <configuration name="DepartmentsTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Crowdar" />
       <extension name="coverage">
         <pattern>
@@ -75,7 +71,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.crowdar" />
-      <option name="MAIN_CLASS_NAME" value="com.crowdar.LoginTest" />
+      <option name="MAIN_CLASS_NAME" value="com.crowdar.DepartmentsTest" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -156,11 +152,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.DepartmentsTest" />
         <item itemvalue="TestNG.ShopingCartTest" />
         <item itemvalue="TestNG.ShopingCartTest.clearShoppingCar" />
         <item itemvalue="TestNG.ShopingCartTest.addFirstArticulCar" />
         <item itemvalue="TestNG.ShopingCartTest.addArticulCar" />
-        <item itemvalue="TestNG.LoginTest" />
       </list>
     </recent_temporary>
   </component>
