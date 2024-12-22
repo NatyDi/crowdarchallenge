@@ -2,6 +2,7 @@ package com.crowdar;
 
 import com.crowdar.Utils.ElementFinder;
 import com.crowdar.page.LoginPage;
+import com.crowdar.page.ShoppingCarPage;
 import io.github.cdimascio.dotenv.Dotenv;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
@@ -29,6 +30,7 @@ public abstract class BaseTest {
     protected ElementFinder elementFinder;
     protected Dotenv dotenv;
     protected LoginPage loginPage;
+
 
     public void setUp() {
         dotenv = Dotenv.configure()
