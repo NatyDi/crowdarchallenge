@@ -1,5 +1,6 @@
-package com.crowdar;
+package com.crowdar.chrome;
 
+import com.crowdar.BaseTest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
@@ -15,7 +16,7 @@ public class LoginTest  extends BaseTest {
 
     @BeforeClass
     public void setUp() {
-        super.setUp();
+        super.setUp("chrome");
     }
 
     @AfterClass

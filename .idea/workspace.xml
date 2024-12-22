@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45807c5b-d6ff-4577-a9eb-f53fb41efdaf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/crowdar/Utils/CapturaEvidencia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/crowdar/edge/LoginTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/crowdar/edge/ShopingCartTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/crowdar/ShopingCartTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/crowdar/ShopingCartTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Falla Intencional.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Falla Intencional.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/crowdar/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/crowdar/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/crowdar/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/crowdar/chrome/LoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/crowdar/ShopingCartTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/crowdar/chrome/ShopingCartTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +42,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.java in Crowdar.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "TestNG.DepartmentsTest.executor": "Run",
@@ -47,34 +52,42 @@
     "TestNG.LoginTest.iniciodeSesion.executor": "Run",
     "TestNG.LoginTest.iniciodeSesionlocked_out_user.executor": "Run",
     "TestNG.LoginTest.iniciodeSesionstandar_user.executor": "Run",
-    "TestNG.LoginTest.performance_glitch_user.executor": "Debug",
+    "TestNG.LoginTest.performance_glitch_user.executor": "Run",
     "TestNG.LoginTest.problem_user.executor": "Run",
+    "TestNG.OpenGoogleInEdgeTest.executor": "Run",
     "TestNG.ShopingCartTest.addArticulCar.executor": "Run",
     "TestNG.ShopingCartTest.addFirstArticulCar.executor": "Run",
     "TestNG.ShopingCartTest.clearShoppingCar.executor": "Run",
     "TestNG.ShopingCartTest.clearShoppingCarConFallaIntencional.executor": "Debug",
     "TestNG.ShopingCartTest.executor": "Run",
+    "TestNG.com.crowdar.chrome.executor": "Run",
+    "TestNG.com.crowdar.edge.executor": "Run",
+    "TestNG.com.crowdar.executor": "Run",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/natyd/Curso Selenium+cucumber/Crowdar"
+    "last_opened_file_path": "C:/Users/natyd/Curso Selenium+cucumber/Crowdar/src/test/java/com/crowdar/edge",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\natyd\Curso Selenium+cucumber\Crowdar\src\test\java\com\crowdar\edge" />
       <recent name="C:\Users\natyd\Curso Selenium+cucumber\Crowdar" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.ShopingCartTest.clearShoppingCarConFallaIntencional">
-    <configuration name="DepartmentsTest" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.LoginTest.performance_glitch_user">
+    <configuration name="LoginTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Crowdar" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.crowdar.*" />
+          <option name="PATTERN" value="com.crowdar.chrome.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.crowdar" />
-      <option name="MAIN_CLASS_NAME" value="com.crowdar.DepartmentsTest" />
+      <option name="MAIN_CLASS_NAME" value="com.crowdar.chrome.LoginTest" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -82,34 +95,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ShopingCartTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="LoginTest.performance_glitch_user" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Crowdar" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.crowdar.*" />
+          <option name="PATTERN" value="com.crowdar.edge.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.crowdar" />
-      <option name="MAIN_CLASS_NAME" value="com.crowdar.ShopingCartTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ShopingCartTest.addFirstArticulCar" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Crowdar" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.crowdar.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.crowdar" />
-      <option name="MAIN_CLASS_NAME" value="com.crowdar.ShopingCartTest" />
-      <option name="METHOD_NAME" value="addFirstArticulCar" />
+      <option name="PACKAGE_NAME" value="com.crowdar.edge" />
+      <option name="MAIN_CLASS_NAME" value="com.crowdar.edge.LoginTest" />
+      <option name="METHOD_NAME" value="performance_glitch_user" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -117,7 +113,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ShopingCartTest.clearShoppingCar" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="com.crowdar" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Crowdar" />
       <extension name="coverage">
         <pattern>
@@ -126,27 +122,39 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.crowdar" />
-      <option name="MAIN_CLASS_NAME" value="com.crowdar.ShopingCartTest" />
-      <option name="METHOD_NAME" value="clearShoppingCar" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="TEST_OBJECT" value="PACKAGE" />
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ShopingCartTest.clearShoppingCarConFallaIntencional" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="com.crowdar.chrome" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Crowdar" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.crowdar.*" />
+          <option name="PATTERN" value="com.crowdar.chrome.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.crowdar" />
-      <option name="MAIN_CLASS_NAME" value="com.crowdar.ShopingCartTest" />
-      <option name="METHOD_NAME" value="clearShoppingCarConFallaIntencional" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="PACKAGE_NAME" value="com.crowdar.chrome" />
+      <option name="TEST_OBJECT" value="PACKAGE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.crowdar.edge" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Crowdar" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.crowdar.edge.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.crowdar.edge" />
+      <option name="TEST_OBJECT" value="PACKAGE" />
       <properties />
       <listeners />
       <method v="2">
@@ -155,11 +163,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.ShopingCartTest.clearShoppingCarConFallaIntencional" />
-        <item itemvalue="TestNG.ShopingCartTest.addFirstArticulCar" />
-        <item itemvalue="TestNG.DepartmentsTest" />
-        <item itemvalue="TestNG.ShopingCartTest" />
-        <item itemvalue="TestNG.ShopingCartTest.clearShoppingCar" />
+        <item itemvalue="TestNG.LoginTest.performance_glitch_user" />
+        <item itemvalue="TestNG.com.crowdar.edge" />
+        <item itemvalue="TestNG.com.crowdar.chrome" />
+        <item itemvalue="TestNG.LoginTest" />
+        <item itemvalue="TestNG.com.crowdar" />
       </list>
     </recent_temporary>
   </component>
@@ -173,26 +181,5 @@
       <updated>1734805613513</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/crowdar/ShopingCartTest.java</url>
-          <line>83</line>
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/crowdar/ShopingCartTest.java</url>
-          <line>87</line>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/crowdar/ShopingCartTest.java</url>
-          <line>84</line>
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

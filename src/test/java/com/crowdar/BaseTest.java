@@ -9,6 +9,8 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.remote.Browser;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.FluentWait;
@@ -32,17 +34,47 @@ public abstract class BaseTest {
     protected LoginPage loginPage;
 
 
-    public void setUp() {
+    public void setUp(String browser) {
         dotenv = Dotenv.configure()
                 .ignoreIfMissing() // que no falle si el archivo .env no existe
                 .load();
 
+        if(browser == "chrome") {
+            setupChromeDriver();
+        } else{
+            setupEdgeDriver();
+        }
 
+
+
+
+        js = (JavascriptExecutor) driver;
+
+        fluentWait = new FluentWait<>(driver)
+                .withTimeout(Duration.ofMillis(100))  // Tiempo máximo de espera
+                .pollingEvery(Duration.ofMillis(20))  // Revisión cada 500 ms
+                .ignoring(NoSuchElementException.class);  // Ignorar la excepción si el elemento no está presente de inmediato
+
+
+        elementFinder = new ElementFinder(fluentWait);
+        loginPage = new LoginPage(elementFinder, js);
+
+    }
+
+    private void setupEdgeDriver() {
+        // Inicializa el navegador Edge
+        String userHome = System.getProperty("user.home");
+        String driverPath = userHome + File.separator + "drivers" + File.separator + "msedgedriver.exe";
+        System.setProperty("webdriver.edge.driver", driverPath);
+        driver = new EdgeDriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().window().maximize();
+    }
+
+    private void setupChromeDriver() {
         // Configuraciones de Chrome
         Map<String, Object> prefs = new HashMap<>();
         prefs.put("safebrowsing.enabled", true); // Evitar advertencias de seguridad
-        //ChromeOptions options = new ChromeOptions();
-        //options.setExperimentalOption("prefs", prefs);
 
         try {
             boolean chromeVisible = Boolean.parseBoolean(dotenv.get("CHROME_VISIBLE"));
@@ -80,18 +112,6 @@ public abstract class BaseTest {
         } catch (Exception ex) {
             logger.error("No se pudo cargar ChromeDriver: " + ex.getMessage(), ex);
         }
-
-        js = (JavascriptExecutor) driver;
-
-        fluentWait = new FluentWait<>(driver)
-                .withTimeout(Duration.ofMillis(100))  // Tiempo máximo de espera
-                .pollingEvery(Duration.ofMillis(20))  // Revisión cada 500 ms
-                .ignoring(NoSuchElementException.class);  // Ignorar la excepción si el elemento no está presente de inmediato
-
-
-        elementFinder = new ElementFinder(fluentWait);
-        loginPage = new LoginPage(elementFinder, js);
-
     }
 
     public void tearDown() throws InterruptedException {
@@ -100,6 +120,7 @@ public abstract class BaseTest {
             driver.quit();
         }
     }
+
     public void iniciodeSesion(String user, String password) {
         iniciodeSesion(user, password, false);
     }

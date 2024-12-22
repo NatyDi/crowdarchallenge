@@ -1,7 +1,7 @@
-package com.crowdar;
+package com.crowdar.edge;
 
+import com.crowdar.BaseTest;
 import com.crowdar.Utils.CapturaEvidencia;
-import com.crowdar.Utils.ElementFinder;
 import com.crowdar.page.ShoppingCarPage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,7 +18,7 @@ public class ShopingCartTest extends BaseTest {
 
     @BeforeClass
     public void setUp() {
-        super.setUp();
+        super.setUp("edge");
         shoppingCarPage = new ShoppingCarPage(super.elementFinder);
         //Iniciar sesión antes de realizar la prueba
         super.iniciodeSesion("standard_user", "secret_sauce");
